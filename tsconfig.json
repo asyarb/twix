@@ -1,0 +1,26 @@
+{
+	"include": ["src", "tests", "@types"],
+	"exclude": ["node_modules"],
+	"compilerOptions": {
+		"strict": true,
+		"skipLibCheck": true,
+
+		"allowJs": false,
+		"noImplicitAny": true,
+
+		"target": "esnext",
+		"module": "esnext",
+		"declaration": false,
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+
+		"noEmit": true,
+
+		"forceConsistentCasingInFileNames": true,
+		"jsx": "preserve",
+		"lib": ["esnext", "dom"],
+		"types": ["node"]
+	}
+}
