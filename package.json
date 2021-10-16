@@ -39,11 +39,11 @@
 		"@commitlint/config-conventional": "^13.2.0",
 		"@typescript-eslint/eslint-plugin": "^5.0.0",
 		"@typescript-eslint/parser": "^5.0.0",
+		"clsx": "*",
 		"eslint": "^8.0.1",
 		"eslint-plugin-tsdoc": "^0.2.14",
 		"husky": "^7.0.1",
 		"prettier": "^2.4.1",
-		"prettier-plugin-jsdoc": "^0.3.24",
 		"siroc": "^0.16.0",
 		"standard-version": "^9.3.1",
 		"tsm": "^2.1.2",
@@ -52,5 +52,8 @@
 	},
 	"engines": {
 		"node": ">=12.7.0"
+	},
+	"peerDependencies": {
+		"clsx": "^1.1.1"
 	}
 }

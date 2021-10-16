@@ -1,5 +1,4 @@
 {
-	"plugins": ["prettier-plugin-jsdoc"],
 	"jsdocSeparateReturnsFromParam": true,
 	"jsdocSingleLineComment": false,
 	"tsdoc": true,
