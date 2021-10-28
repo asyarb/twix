@@ -1,9 +1,9 @@
 import { test } from "uvu"
 import assert from "uvu/assert"
 
-import { twvx } from "../src"
+import { twix } from "../src"
 
-const button = twvx({
+const button = twix({
 	base: "rounded",
 	variants: {
 		color: {

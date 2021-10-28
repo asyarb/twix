@@ -31,7 +31,7 @@ interface TwvxOptions<
 	compoundVariants?: Array<CompoundVariant<TVariants>>
 }
 
-export function twvx<
+export function twix<
 	TVariants extends Record<string, Variant>,
 	TDefaultVariants extends DefaultVariants<TVariants>
 >({
