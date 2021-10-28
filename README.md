@@ -18,6 +18,7 @@ npm i @asyarb/twix clsx
 ```ts
 const button = twix({
 	base: "rounded",
+
 	variants: {
 		color: {
 			purple: "bg-purple",
@@ -28,9 +29,7 @@ const button = twix({
 			large: "p-8",
 		},
 	},
-	defaultVariants: {
-		size: "large",
-	},
+
 	compoundVariants: [
 		{
 			color: "purple",
@@ -38,6 +37,10 @@ const button = twix({
 			className: "font-bold",
 		},
 	],
+
+	defaultVariants: {
+		size: "large",
+	},
 })
 
 // => "rounded p-8 bg-purple"
