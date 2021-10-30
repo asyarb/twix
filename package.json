@@ -1,10 +1,10 @@
 {
-	"name": "@asyarb/twvx",
-	"version": "7.0.2",
+	"name": "@asyarb/twix",
+	"version": "0.1.0",
 	"description": "Create variant based className strings.",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/asyarb/twvx.git"
+		"url": "https://github.com/asyarb/twix.git"
 	},
 	"license": "MIT",
 	"author": "Anthony Yarbrough <asyarb@hawaii.edu>",
@@ -46,7 +46,7 @@
 		"prettier": "^2.4.1",
 		"siroc": "^0.16.0",
 		"standard-version": "^9.3.2",
-		"tsm": "^2.1.3",
+		"tsm": "^2.1.4",
 		"typescript": "^4.4.4",
 		"uvu": "^0.5.2"
 	},
