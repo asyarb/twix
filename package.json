@@ -1,6 +1,6 @@
 {
 	"name": "@asyarb/twix",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Create variant based className strings.",
 	"repository": {
 		"type": "git",
@@ -50,10 +50,10 @@
 		"typescript": "^4.4.4",
 		"uvu": "^0.5.2"
 	},
-	"engines": {
-		"node": ">=12.7.0"
-	},
 	"peerDependencies": {
 		"clsx": "^1.1.1"
+	},
+	"engines": {
+		"node": ">=12.7.0"
 	}
 }
