@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.2](https://github.com/asyarb/twix/compare/v0.1.1...v0.1.2) (2021-11-10)
+
+
+### Features
+
+* support boolean variants ([682c815](https://github.com/asyarb/twix/commit/682c8155b6dce699fbafbbd7fcb249ec5799f098))
+
 ### 0.1.1 (2021-10-30)
 
 
