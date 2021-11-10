@@ -3,20 +3,31 @@ import clsx from "clsx"
 type Variant = Record<string, string>
 
 type DefaultVariants<TVariants extends Record<string, Variant>> = {
-	[K in keyof TVariants]?: keyof TVariants[K]
+	[K in keyof TVariants]?: ResolvedVariantKeys<TVariants[K]>
 }
+
+// Maps special keys like "true" to their native counterparts.
+// e.g. "true" -> true
+type ResolvedVariantKeys<TVariant extends Variant> = Extract<
+	keyof TVariant,
+	"true"
+> extends never
+	? keyof TVariant
+	: Exclude<keyof TVariant, "true"> | true | false
 
 type ActiveVariants<
 	TVariants extends Record<string, Variant>,
 	TDefaultVariants extends DefaultVariants<TVariants>
 > = {
-	[K in keyof Omit<TVariants, keyof TDefaultVariants>]: keyof TVariants[K]
+	[K in keyof Omit<TVariants, keyof TDefaultVariants>]: ResolvedVariantKeys<
+		TVariants[K]
+	>
 } & {
-	[K in keyof TVariants]?: keyof TVariants[K]
+	[K in keyof TVariants]?: ResolvedVariantKeys<TVariants[K]>
 }
 
 type CompoundVariant<TVariants extends Record<string, Variant>> = {
-	[K in keyof TVariants]?: keyof TVariants[K]
+	[K in keyof TVariants]?: ResolvedVariantKeys<TVariants[K]>
 } & {
 	className: string
 }

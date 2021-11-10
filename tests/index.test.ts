@@ -14,9 +14,13 @@ const button = twix({
 			small: "p-5",
 			large: "p-8",
 		},
+		uppercase: {
+			true: "uppercase",
+		},
 	},
 	defaultVariants: {
 		color: "red",
+		uppercase: false,
 	},
 	compoundVariants: [
 		{
@@ -55,6 +59,16 @@ test("Compound variants", () => {
 	const className = button({ color: "red", size: "small" })
 
 	assert.ok(className.includes("flex"))
+})
+
+test("Boolean variants", () => {
+	const enabled = button({ size: "small", uppercase: true })
+	const defaultDisabled = button({ size: "small" })
+	const explicitDisabled = button({ size: "small", uppercase: false })
+
+	assert.ok(enabled.includes("uppercase"))
+	assert.ok(!defaultDisabled.includes("uppercase"))
+	assert.ok(!explicitDisabled.includes("uppercase"))
 })
 
 test("Kitchen sink", () => {
