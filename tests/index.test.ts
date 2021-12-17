@@ -48,6 +48,12 @@ test("Default variants", () => {
 	assert.ok(className.includes("text-red"))
 })
 
+test("Default variants w/ explicit undefined", () => {
+	const className = button({ size: "small", color: undefined })
+
+	assert.ok(className.includes("text-red"))
+})
+
 test("Specify variants", () => {
 	const className = button({ color: "blue", size: "small" })
 
