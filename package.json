@@ -1,6 +1,6 @@
 {
 	"name": "@asyarb/twix",
-	"version": "0.1.2",
+	"version": "0.1.3",
 	"description": "Create variant based className strings.",
 	"repository": {
 		"type": "git",
@@ -27,11 +27,11 @@
 	"scripts": {
 		"build": "siroc build",
 		"dev": "siroc build --watch",
-		"prepare": "npx husky install",
 		"format": "prettier --write .",
 		"lint": "eslint --ext .js,.ts .",
-		"test": "uvu -r tsm tests",
-		"release": "npm run build && npm run test && npm run lint && standard-version"
+		"prepare": "npx husky install",
+		"release": "npm run build && npm run test && npm run lint && standard-version",
+		"test": "uvu -r tsm tests"
 	},
 	"browserslist": ">2%, not ie 11, not op_mini all",
 	"devDependencies": {
