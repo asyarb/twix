@@ -42,6 +42,26 @@ interface TwvxOptions<
 	compoundVariants?: Array<CompoundVariant<TVariants>>
 }
 
+function resolveVariants<
+	TVariants extends Record<string, Variant>,
+	TDefaultVariants extends DefaultVariants<TVariants>
+>(
+	defaultVariants: TDefaultVariants,
+	activeVariants: ActiveVariants<TVariants, TDefaultVariants>
+) {
+	const result = { ...defaultVariants }
+
+	for (const key in activeVariants) {
+		const value = activeVariants[key]
+		if (value === undefined) continue
+
+		//@ts-expect-error - key should always be a valid key for our result type.
+		result[key] = value
+	}
+
+	return result
+}
+
 export function twix<
 	TVariants extends Record<string, Variant>,
 	TDefaultVariants extends DefaultVariants<TVariants>
@@ -54,10 +74,7 @@ export function twix<
 	return (
 		activeVariants: ActiveVariants<TVariants, TDefaultVariants>
 	): string => {
-		const resolvedVariants = {
-			...defaultVariants,
-			...activeVariants,
-		}
+		const resolvedVariants = resolveVariants(defaultVariants, activeVariants)
 
 		const classNames: string[] = []
 
