@@ -34,7 +34,7 @@ const button = twix({
 		{
 			color: "purple",
 			size: "small",
-			className: "font-bold",
+			class: "font-bold",
 		},
 	],
 
@@ -71,6 +71,17 @@ button({ size: "small" })
  * { color: 'purple' | 'blue', size?: 'small' | 'large' }
  */
 type ButtonVariants = GetVariants<typeof button>
+```
+
+### Additional classes
+
+The function returned from `twix` can also append arbitrary classes if desired.
+
+```ts
+// ... Same button from above.
+
+// => "rounded p-5 bg-purple font-bold arbitrary"
+button({ color: "purple", size: "small", class: "arbitrary" })
 ```
 
 ### React usage

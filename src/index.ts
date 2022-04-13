@@ -24,12 +24,14 @@ type ActiveVariants<
 	>
 } & {
 	[K in keyof TVariants]?: ResolvedVariantKeys<TVariants[K]>
+} & {
+	class?: string
 }
 
 type CompoundVariant<TVariants extends Record<string, Variant>> = {
 	[K in keyof TVariants]?: ResolvedVariantKeys<TVariants[K]>
 } & {
-	className: string
+	class: string
 }
 
 interface TwvxOptions<
@@ -71,30 +73,34 @@ export function twix<
 	defaultVariants,
 	compoundVariants = [],
 }: TwvxOptions<TVariants, TDefaultVariants>) {
-	return (
-		activeVariants: ActiveVariants<TVariants, TDefaultVariants>
-	): string => {
-		const resolvedVariants = resolveVariants(defaultVariants, activeVariants)
+	return ({
+		class: _class,
+		...activeVariants
+	}: ActiveVariants<TVariants, TDefaultVariants>): string => {
+		const resolvedVariants = resolveVariants(
+			defaultVariants as any,
+			activeVariants as any
+		)
 
-		const classNames: string[] = []
+		const classes: string[] = []
 
-		// For each resolved variant, resolve the className and add it to the list
+		// For each resolved variant, resolve the class and add it to the list
 		// of classes.
 		for (const key in resolvedVariants) {
 			const value = resolvedVariants[key] as string | undefined
 			if (!value) continue
 
-			classNames.push(variants[key][value])
+			classes.push(variants[key][value])
 		}
 
 		// For each compound variant definition, check to if every key value pair is
-		// active in our resolved variants. If it is, add the specified className to
+		// active in our resolved variants. If it is, add the specified class to
 		// the list of classes.
 		for (const compoundV of compoundVariants) {
 			let shouldIncludeCompoundVariant = true
 
 			for (const [key, value] of Object.entries(compoundV)) {
-				if (key === "className") continue
+				if (key === "class") continue
 
 				// If any resolved variant doesn't match one of our specified
 				// key-value pairs, we shouldn't include the compound class.
@@ -104,11 +110,11 @@ export function twix<
 			}
 
 			if (shouldIncludeCompoundVariant) {
-				classNames.push(compoundV.className)
+				classes.push(compoundV.class)
 			}
 		}
 
-		return clsx(classNames, base)
+		return clsx(classes, base, _class)
 	}
 }
 

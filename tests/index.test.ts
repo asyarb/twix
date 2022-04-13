@@ -26,12 +26,12 @@ const button = twix({
 		{
 			color: "red",
 			size: "small",
-			className: "flex",
+			class: "flex",
 		},
 		{
 			color: "blue",
 			size: "small",
-			className: "grid",
+			class: "grid",
 		},
 	],
 })
@@ -75,6 +75,14 @@ test("Boolean variants", () => {
 	assert.ok(enabled.includes("uppercase"))
 	assert.ok(!defaultDisabled.includes("uppercase"))
 	assert.ok(!explicitDisabled.includes("uppercase"))
+})
+
+test("Arbitrary classes", () => {
+	const className = button({ color: "red", size: "small", class: "arbitrary" })
+
+	assert.ok(className.includes("text-red"))
+	assert.ok(className.includes("p-5"))
+	assert.ok(className.includes("arbitrary"))
 })
 
 test("Kitchen sink", () => {
