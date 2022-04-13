@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.1.4](https://github.com/asyarb/twix/compare/v0.1.3...v0.1.4) (2022-04-13)
+
+
+### Features
+
+* allow arbitrary classes via `class` property ([9b13c2e](https://github.com/asyarb/twix/commit/9b13c2e62afc84e67633debbadcb989c02a0d797))
+
 ### [0.1.3](https://github.com/asyarb/twix/compare/v0.1.2...v0.1.3) (2021-12-17)
 
 
