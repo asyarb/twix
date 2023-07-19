@@ -2,6 +2,17 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.2.0](https://github.com/asyarb/twix/compare/v0.1.4...v0.2.0) (2023-07-19)
+
+
+### ⚠ BREAKING CHANGES
+
+* requires clsx 2.0 to install
+
+### Features
+
+* bump clsx peer dep ([cd3f8e5](https://github.com/asyarb/twix/commit/cd3f8e5ae54ac2b474373758a9ae7d25c28ec029))
+
 ### [0.1.4](https://github.com/asyarb/twix/compare/v0.1.3...v0.1.4) (2022-04-13)
 
 
