@@ -29,7 +29,6 @@
 		"dev": "siroc build --watch",
 		"format": "prettier --write .",
 		"lint": "eslint --ext .js,.ts .",
-		"prepare": "npx husky install",
 		"release": "npm run build && npm run test && npm run lint && standard-version",
 		"test": "uvu -r tsm tests"
 	},
@@ -42,7 +41,6 @@
 		"clsx": "^2.0.0",
 		"eslint": "^8.2.0",
 		"eslint-plugin-tsdoc": "^0.2.14",
-		"husky": "^7.0.4",
 		"prettier": "^2.4.1",
 		"siroc": "^0.16.0",
 		"standard-version": "^9.3.2",
