@@ -1,6 +1,6 @@
 {
 	"name": "@asyarb/twix",
-	"version": "0.2.1",
+	"version": "0.3.0",
 	"description": "Create variant based className strings.",
 	"repository": "https://github.com/asyarb/twix",
 	"author": "Anthony Yarbrough <asyarb@hawaii.edu>",
@@ -28,7 +28,7 @@
 		"build": "NODE_ENV=production tsup",
 		"test": "vitest run",
 		"format": "prettier --write .",
-		"release": "npm run build && npm run test && npm run lint && standard-version"
+		"release": "npm run build && npm run test && standard-version"
 	},
 	"browserslist": ">2%, not ie 11, not op_mini all",
 	"devDependencies": {

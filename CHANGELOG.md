@@ -1,8 +1,17 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See
-[standard-version](https://github.com/conventional-changelog/standard-version)
-for commit guidelines.
+All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+
+## [0.3.0](https://github.com/asyarb/twix/compare/v0.2.1...v0.3.0) (2024-04-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* New tools to output bundles, possible breakage in types/imports in bundlers.
+
+### Features
+
+* new bundle & release tooling ([fd94a33](https://github.com/asyarb/twix/commit/fd94a33e80029fde2ca78e1e9722a115baa22c6c))
 
 ### [0.2.1](https://github.com/asyarb/twix/compare/v0.2.0...v0.2.1) (2024-04-11)
 
