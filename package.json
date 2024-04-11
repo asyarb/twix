@@ -6,6 +6,7 @@
 	"author": "Anthony Yarbrough <asyarb@hawaii.edu>",
 	"license": "MIT",
 	"sideEffects": false,
+	"type": "module",
 	"publishConfig": {
 		"access": "public"
 	},
