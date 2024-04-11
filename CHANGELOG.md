@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.2.1](https://github.com/asyarb/twix/compare/v0.2.0...v0.2.1) (2024-04-11)
+
+
+### Bug Fixes
+
+* typings for module resolution - bundler ([a60e32b](https://github.com/asyarb/twix/commit/a60e32bec9f5fece8da5b0d891e49247c4715a8c))
+
 ## [0.2.0](https://github.com/asyarb/twix/compare/v0.1.4...v0.2.0) (2023-07-19)
 
 

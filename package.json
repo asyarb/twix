@@ -1,6 +1,6 @@
 {
 	"name": "@asyarb/twix",
-	"version": "0.2.0",
+	"version": "0.2.1",
 	"description": "Create variant based className strings.",
 	"repository": {
 		"type": "git",
@@ -12,7 +12,7 @@
 	"type": "module",
 	"exports": {
 		".": {
-            "types": "./dist/index.d.ts",
+			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
 		},
