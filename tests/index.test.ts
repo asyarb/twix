@@ -1,97 +1,93 @@
-import { test } from "uvu"
-import assert from "uvu/assert"
-
-import { twix } from "../src"
+import { test, assert } from 'vitest'
+import { twix } from '../src'
 
 const button = twix({
-	base: "rounded",
+	base: 'rounded',
 	variants: {
 		color: {
-			red: "text-red",
-			blue: "text-blue",
+			red: 'text-red',
+			blue: 'text-blue',
 		},
 		size: {
-			small: "p-5",
-			large: "p-8",
+			small: 'p-5',
+			large: 'p-8',
 		},
 		uppercase: {
-			true: "uppercase",
+			true: 'uppercase',
 		},
 	},
 	defaultVariants: {
-		color: "red",
+		color: 'red',
 		uppercase: false,
 	},
 	compoundVariants: [
 		{
-			color: "red",
-			size: "small",
-			class: "flex",
+			color: 'red',
+			size: 'small',
+			class: 'flex',
 		},
 		{
-			color: "blue",
-			size: "small",
-			class: "grid",
+			color: 'blue',
+			size: 'small',
+			class: 'grid',
 		},
 	],
 })
 
-test("Base styles", () => {
-	const className = button({ size: "small" })
+test('Base styles', () => {
+	const className = button({ size: 'small' })
 
-	assert.ok(className.includes("rounded"))
+	assert.ok(className.includes('rounded'))
 })
 
-test("Default variants", () => {
-	const className = button({ size: "small" })
+test('Default variants', () => {
+	const className = button({ size: 'small' })
 
-	assert.ok(className.includes("text-red"))
+	assert.ok(className.includes('text-red'))
 })
 
-test("Default variants w/ explicit undefined", () => {
-	const className = button({ size: "small", color: undefined })
+test('Default variants w/ explicit undefined', () => {
+	const className = button({ size: 'small', color: undefined })
 
-	assert.ok(className.includes("text-red"))
+	assert.ok(className.includes('text-red'))
 })
 
-test("Specify variants", () => {
-	const className = button({ color: "blue", size: "small" })
+test('Specify variants', () => {
+	const className = button({ color: 'blue', size: 'small' })
 
-	assert.ok(className.includes("text-blue"))
-	assert.ok(className.includes("p-5"))
+	assert.ok(className.includes('text-blue'))
+	assert.ok(className.includes('p-5'))
 })
 
-test("Compound variants", () => {
-	const className = button({ color: "red", size: "small" })
+test('Compound variants', () => {
+	const className = button({ color: 'red', size: 'small' })
 
-	assert.ok(className.includes("flex"))
+	assert.ok(className.includes('flex'))
 })
 
-test("Boolean variants", () => {
-	const enabled = button({ size: "small", uppercase: true })
-	const defaultDisabled = button({ size: "small" })
-	const explicitDisabled = button({ size: "small", uppercase: false })
+test('Boolean variants', () => {
+	const enabled = button({ size: 'small', uppercase: true })
+	const defaultDisabled = button({ size: 'small' })
+	const explicitDisabled = button({ size: 'small', uppercase: false })
 
-	assert.ok(enabled.includes("uppercase"))
-	assert.ok(!defaultDisabled.includes("uppercase"))
-	assert.ok(!explicitDisabled.includes("uppercase"))
+	assert.ok(enabled.includes('uppercase'))
+	assert.ok(!defaultDisabled.includes('uppercase'))
+	assert.ok(!explicitDisabled.includes('uppercase'))
 })
 
-test("Arbitrary classes", () => {
-	const className = button({ color: "red", size: "small", class: "arbitrary" })
+test('Arbitrary classes', () => {
+	const className = button({ color: 'red', size: 'small', class: 'arbitrary' })
 
-	assert.ok(className.includes("text-red"))
-	assert.ok(className.includes("p-5"))
-	assert.ok(className.includes("arbitrary"))
+	assert.ok(className.includes('text-red'))
+	assert.ok(className.includes('p-5'))
+	assert.ok(className.includes('arbitrary'))
 })
 
-test("Kitchen sink", () => {
-	const className = button({ color: "blue", size: "small" })
+test('Kitchen sink', () => {
+	const className = button({ color: 'blue', size: 'small' })
 
-	assert.ok(className.includes("text-blue"))
-	assert.ok(className.includes("p-5"))
-	assert.ok(className.includes("rounded"))
-	assert.ok(className.includes("grid"))
+	assert.ok(className.includes('text-blue'))
+	assert.ok(className.includes('p-5'))
+	assert.ok(className.includes('rounded'))
+	assert.ok(className.includes('grid'))
 })
-
-test.run()

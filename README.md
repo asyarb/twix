@@ -17,37 +17,37 @@ npm i @asyarb/twix clsx
 
 ```ts
 const button = twix({
-	base: "rounded",
+	base: 'rounded',
 
 	variants: {
 		color: {
-			purple: "bg-purple",
-			blue: "bg-blue",
+			purple: 'bg-purple',
+			blue: 'bg-blue',
 		},
 		size: {
-			small: "p-5",
-			large: "p-8",
+			small: 'p-5',
+			large: 'p-8',
 		},
 	},
 
 	compoundVariants: [
 		{
-			color: "purple",
-			size: "small",
-			class: "font-bold",
+			color: 'purple',
+			size: 'small',
+			class: 'font-bold',
 		},
 	],
 
 	defaultVariants: {
-		size: "large",
+		size: 'large',
 	},
 })
 
 // => "rounded p-8 bg-purple"
-button({ color: "purple" })
+button({ color: 'purple' })
 
 // => "rounded p-5 bg-purple font-bold"
-button({ color: "purple", size: "small" })
+button({ color: 'purple', size: 'small' })
 ```
 
 ## TypeScript
@@ -56,7 +56,7 @@ button({ color: "purple", size: "small" })
 using your variants.
 
 ```ts
-import type { GetVariants } from "@asyarb/twix"
+import type { GetVariants } from '@asyarb/twix'
 
 // ... Same button from above.
 
@@ -64,7 +64,7 @@ import type { GetVariants } from "@asyarb/twix"
 button()
 
 // => TypeScript error - Must provide `color` since no defaultVariant exists.
-button({ size: "small" })
+button({ size: 'small' })
 
 // => Get variants as a type you can re-use elsewhere:
 /**
@@ -81,7 +81,7 @@ The function returned from `twix` can also append arbitrary classes if desired.
 // ... Same button from above.
 
 // => "rounded p-5 bg-purple font-bold arbitrary"
-button({ color: "purple", size: "small", class: "arbitrary" })
+button({ color: 'purple', size: 'small', class: 'arbitrary' })
 ```
 
 ### React usage
@@ -89,7 +89,7 @@ button({ color: "purple", size: "small", class: "arbitrary" })
 ```tsx
 // components/Button.tsx
 
-import { GetVariants, twix } from "@asyarb/twix"
+import { GetVariants, twix } from '@asyarb/twix'
 
 const button = twix({
 	/** Same example from above... */

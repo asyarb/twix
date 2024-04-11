@@ -2,52 +2,42 @@
 	"name": "@asyarb/twix",
 	"version": "0.2.1",
 	"description": "Create variant based className strings.",
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/asyarb/twix.git"
-	},
-	"license": "MIT",
+	"repository": "https://github.com/asyarb/twix",
 	"author": "Anthony Yarbrough <asyarb@hawaii.edu>",
+	"license": "MIT",
 	"sideEffects": false,
-	"type": "module",
+	"publishConfig": {
+		"access": "public"
+	},
+	"files": [
+		"dist"
+	],
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
 			"require": "./dist/index.js"
-		},
-		"./package.json": "./package.json"
+		}
 	},
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"types": "dist/index.d.ts",
-	"files": [
-		"dist",
-		"src"
-	],
+	"types": "./dist/index.d.ts",
 	"scripts": {
-		"build": "siroc build",
-		"dev": "siroc build --watch",
+		"dev": "vitest",
+		"build": "NODE_ENV=production tsup",
+		"test": "vitest run",
 		"format": "prettier --write .",
-		"lint": "eslint --ext .js,.ts .",
-		"release": "npm run build && npm run test && npm run lint && standard-version",
-		"test": "uvu -r tsm tests"
+		"release": "npm run build && npm run test && npm run lint && standard-version"
 	},
 	"browserslist": ">2%, not ie 11, not op_mini all",
 	"devDependencies": {
-		"@commitlint/cli": "^15.0.0",
-		"@commitlint/config-conventional": "^15.0.0",
-		"@typescript-eslint/eslint-plugin": "^5.3.1",
-		"@typescript-eslint/parser": "^5.3.1",
-		"clsx": "^2.0.0",
-		"eslint": "^8.2.0",
-		"eslint-plugin-tsdoc": "^0.2.14",
-		"prettier": "^2.4.1",
-		"siroc": "^0.16.0",
+		"clsx": "^2.1.0",
+		"prettier": "^3.2.5",
 		"standard-version": "^9.3.2",
-		"tsm": "^2.1.4",
-		"typescript": "^4.4.4",
-		"uvu": "^0.5.2"
+		"tsup": "^8.0.2",
+		"typescript": "^5.4.5",
+		"vite": "^5.2.8",
+		"vitest": "^1.4.0"
 	},
 	"peerDependencies": {
 		"clsx": "^2"

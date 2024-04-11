@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import clsx from "clsx"
+import clsx from 'clsx'
 
 type Variant = Record<string, string>
 
@@ -10,16 +10,14 @@ type DefaultVariants<TVariants extends Record<string, Variant>> = {
 
 // Maps special keys like "true" to their native counterparts.
 // e.g. "true" -> true
-type ResolvedVariantKeys<TVariant extends Variant> = Extract<
-	keyof TVariant,
-	"true"
-> extends never
-	? keyof TVariant
-	: Exclude<keyof TVariant, "true"> | true | false
+type ResolvedVariantKeys<TVariant extends Variant> =
+	Extract<keyof TVariant, 'true'> extends never
+		? keyof TVariant
+		: Exclude<keyof TVariant, 'true'> | true | false
 
 type ActiveVariants<
 	TVariants extends Record<string, Variant>,
-	TDefaultVariants extends DefaultVariants<TVariants>
+	TDefaultVariants extends DefaultVariants<TVariants>,
 > = {
 	[K in keyof Omit<TVariants, keyof TDefaultVariants>]: ResolvedVariantKeys<
 		TVariants[K]
@@ -38,7 +36,7 @@ type CompoundVariant<TVariants extends Record<string, Variant>> = {
 
 interface TwvxOptions<
 	TVariants extends Record<string, Variant>,
-	TDefaultVariants extends DefaultVariants<TVariants>
+	TDefaultVariants extends DefaultVariants<TVariants>,
 > {
 	base: string
 	variants: TVariants
@@ -48,10 +46,10 @@ interface TwvxOptions<
 
 function resolveVariants<
 	TVariants extends Record<string, Variant>,
-	TDefaultVariants extends DefaultVariants<TVariants>
+	TDefaultVariants extends DefaultVariants<TVariants>,
 >(
 	defaultVariants: TDefaultVariants,
-	activeVariants: ActiveVariants<TVariants, TDefaultVariants>
+	activeVariants: ActiveVariants<TVariants, TDefaultVariants>,
 ) {
 	const result = { ...defaultVariants }
 
@@ -68,7 +66,7 @@ function resolveVariants<
 
 export function twix<
 	TVariants extends Record<string, Variant>,
-	TDefaultVariants extends DefaultVariants<TVariants>
+	TDefaultVariants extends DefaultVariants<TVariants>,
 >({
 	base,
 	variants,
@@ -81,7 +79,7 @@ export function twix<
 	}: ActiveVariants<TVariants, TDefaultVariants>): string => {
 		const resolvedVariants = resolveVariants(
 			defaultVariants as any,
-			activeVariants as any
+			activeVariants as any,
 		)
 
 		const classes: string[] = []
@@ -92,7 +90,10 @@ export function twix<
 			const value = resolvedVariants[key] as string | undefined
 			if (!value) continue
 
-			classes.push(variants[key][value])
+			const resolvedClass = variants[key]?.[value]
+			if (!resolvedClass) continue
+
+			classes.push(resolvedClass)
 		}
 
 		// For each compound variant definition, check to if every key value pair is
@@ -102,7 +103,7 @@ export function twix<
 			let shouldIncludeCompoundVariant = true
 
 			for (const [key, value] of Object.entries(compoundV)) {
-				if (key === "class") continue
+				if (key === 'class') continue
 
 				// If any resolved variant doesn't match one of our specified
 				// key-value pairs, we shouldn't include the compound class.

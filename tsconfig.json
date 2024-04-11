@@ -1,25 +1,23 @@
 {
-	"include": ["src", "tests", "@types"],
+	"include": ["./**/*.ts"],
 	"exclude": ["node_modules"],
 	"compilerOptions": {
-		"strict": true,
-		"skipLibCheck": true,
-
-		"allowJs": false,
-		"noImplicitAny": true,
-
 		"target": "esnext",
 		"module": "esnext",
-		"declaration": false,
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
+		"strict": true,
+		"strictNullChecks": true,
+
+		"moduleResolution": "Bundler",
 		"allowSyntheticDefaultImports": true,
-		"esModuleInterop": true,
 
+		"noUncheckedIndexedAccess": true,
+		"noUnusedLocals": true,
+		"noImplicitAny": true,
 		"noEmit": true,
+		"noFallthroughCasesInSwitch": true,
 
-		"forceConsistentCasingInFileNames": true,
-		"jsx": "preserve",
-		"lib": ["esnext", "dom"],
+		"allowJs": false,
+		"skipLibCheck": true,
+		"resolveJsonModule": true
 	}
 }
