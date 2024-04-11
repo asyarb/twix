@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.2](https://github.com/asyarb/twix/compare/v0.3.1...v0.3.2) (2024-04-11)
+
+
+### Bug Fixes
+
+* pkg json exports again ([a25dda6](https://github.com/asyarb/twix/commit/a25dda6469437c8bed03d1d2ac9165189dc11993))
+
 ### [0.3.1](https://github.com/asyarb/twix/compare/v0.3.0...v0.3.1) (2024-04-11)
 
 
