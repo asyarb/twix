@@ -12,12 +12,13 @@
 	"type": "module",
 	"exports": {
 		".": {
-			"require": "./dist/index.cjs",
-			"import": "./dist/index.mjs"
+            "types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
 		},
 		"./package.json": "./package.json"
 	},
-	"main": "dist/index.cjs",
+	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
 	"files": [
