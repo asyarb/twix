@@ -9,20 +9,19 @@
 	"author": "Anthony Yarbrough <asyarb@hawaii.edu>",
 	"license": "MIT",
 	"sideEffects": false,
-	"type": "module",
 	"publishConfig": {
 		"access": "public"
 	},
 	"files": [
 		"dist"
 	],
-	"main": "./dist/index.cjs",
-	"module": "./dist/index.js",
+	"main": "./dist/index.js",
+	"module": "./dist/index.mjs",
 	"exports": {
 		".": {
 			"types": "./dist/index.d.ts",
-			"import": "./dist/index.js",
-			"require": "./dist/index.cjs"
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.js"
 		}
 	},
 	"types": "./dist/index.d.ts",
@@ -45,8 +44,5 @@
 	},
 	"peerDependencies": {
 		"clsx": "^2"
-	},
-	"engines": {
-		"node": ">=12.7.0"
 	}
 }
